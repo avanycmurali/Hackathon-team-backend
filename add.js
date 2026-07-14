@@ -38,6 +38,11 @@ app.post("/add-team",async(req,res)=>{
     res.json({"status":"success"})
 })
 
+app.post("/view-team",async(req,res)=>{
+    const teams=await team.find()
+    res.json(teams)
+})
+
 app.listen(3000,()=>{
     console.log("server started")
 })
